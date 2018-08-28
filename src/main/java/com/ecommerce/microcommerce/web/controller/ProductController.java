@@ -73,6 +73,14 @@ public class ProductController {
         return produitAvecDiff;
     }
 
+    @GetMapping (value = "/OrdreAlpha")
+    public List<Product> trierProduitsParOrdreAlphabetique(){
+
+    List<Product> produit = productDao.findByOrderByNom();
+
+    return produit;
+    }
+
 
     //ajouter un produit
     @PostMapping(value = "/Produits")
